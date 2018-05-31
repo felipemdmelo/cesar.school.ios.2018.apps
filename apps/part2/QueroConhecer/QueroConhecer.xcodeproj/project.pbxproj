@@ -11,6 +11,7 @@
 		DC6B27F720BE1CDC0006D3F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC6B27F520BE1CDC0006D3F8 /* Main.storyboard */; };
 		DC6B27F920BE1CDD0006D3F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC6B27F820BE1CDD0006D3F8 /* Assets.xcassets */; };
 		DC6B27FC20BE1CDD0006D3F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC6B27FA20BE1CDD0006D3F8 /* LaunchScreen.storyboard */; };
+		DC6B280420BF77390006D3F8 /* PlaceFinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6B280320BF77390006D3F8 /* PlaceFinderViewController.swift */; };
 		EDF5B18F20BECC670028E0E6 /* PlacesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF5B18E20BECC670028E0E6 /* PlacesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -21,6 +22,7 @@
 		DC6B27F820BE1CDD0006D3F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC6B27FB20BE1CDD0006D3F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC6B27FD20BE1CDD0006D3F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC6B280320BF77390006D3F8 /* PlaceFinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceFinderViewController.swift; sourceTree = "<group>"; };
 		EDF5B18E20BECC670028E0E6 /* PlacesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,10 +56,10 @@
 		DC6B27F020BE1CDC0006D3F8 /* QueroConhecer */ = {
 			isa = PBXGroup;
 			children = (
+				DC6B27F120BE1CDC0006D3F8 /* AppDelegate.swift */,
 				EDF5B18C20BECB700028E0E6 /* Models */,
 				EDF5B18B20BECB540028E0E6 /* Views */,
 				EDF5B18D20BECB790028E0E6 /* Controllers */,
-				DC6B27F120BE1CDC0006D3F8 /* AppDelegate.swift */,
 				DC6B27F820BE1CDD0006D3F8 /* Assets.xcassets */,
 				DC6B27FD20BE1CDD0006D3F8 /* Info.plist */,
 			);
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				EDF5B18E20BECC670028E0E6 /* PlacesTableViewController.swift */,
+				DC6B280320BF77390006D3F8 /* PlaceFinderViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC6B280420BF77390006D3F8 /* PlaceFinderViewController.swift in Sources */,
 				DC6B27F220BE1CDC0006D3F8 /* AppDelegate.swift in Sources */,
 				EDF5B18F20BECC670028E0E6 /* PlacesTableViewController.swift in Sources */,
 			);
