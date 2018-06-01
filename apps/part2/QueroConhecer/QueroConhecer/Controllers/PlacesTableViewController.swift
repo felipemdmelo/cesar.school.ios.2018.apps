@@ -10,43 +10,87 @@ import UIKit
 
 class PlacesTableViewController: UITableViewController {
 
+    // estrutura para armazenar os Places
+    var places: [Place] = []
+    
+    // persistence
+    let ud = UserDefaults.standard
+    
+    // label com mensagem sem dados
+    var lbNoPlaces: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        loadPlaces()
+        
+        lbNoPlaces = UILabel()
+        lbNoPlaces.text = "Cadastre os locais que deseja conhecer\nclicando no botão + acima."
+        lbNoPlaces.textAlignment = .center
+        lbNoPlaces.numberOfLines = 0
+    }
+    
+    func loadPlaces() {
+        
+        if let placeData = ud.data(forKey: "places") {
+            do {
+                places = try JSONDecoder().decode([Place].self, from: placeData)
+                tableView.reloadData()
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func savePlaces() {
+        do {
+            let json = try JSONEncoder().encode(places)
+            self.ud.setValue(json, forKey: "places")
+        } catch {
+            print(error.localizedDescription)
+        }
     }
-
+    
+    @objc func showAll() {
+        performSegue(withIdentifier: "mapSegue", sender: places)
+    }
+    
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        // return the number of rows
+        
+        if places.count > 0 {
+            let btShowAll = UIBarButtonItem(title: "Exibir todos", style: .plain, target: self, action: #selector(showAll))
+            navigationItem.leftBarButtonItem = btShowAll
+            tableView.backgroundView = nil
+        } else {
+            navigationItem.leftBarButtonItem = nil
+            tableView.backgroundView = lbNoPlaces
+        }
+        
+        return places.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
         // Configure the cell...
-
+        let place = places[indexPath.row]
+        
+        cell.textLabel?.text = place.name
+        
         return cell
     }
-    */
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let place = places[indexPath.row]
+        performSegue(withIdentifier: "mapSegue", sender: place)
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -55,17 +99,19 @@ class PlacesTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            
+            places.remove(at: indexPath.row)
+            savePlaces()
+            
             // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.
@@ -82,14 +128,46 @@ class PlacesTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier! == "finderSegue" {
+            let vc = segue.destination as! PlaceFinderViewController
+            vc.delegate = self
+        } else if segue.identifier! == "mapSegue" {
+            print("-> map segue")
+            let vc = segue.destination as! MapViewController
+            switch sender {
+            case let place as Place:
+                vc.places = [place]
+            default:
+                vc.places = places
+            }
+        }
     }
-    */
-
 }
+
+
+extension PlacesTableViewController: PlaceFinderDelegate {
+    
+    func addPlace(_ place: Place) {
+        
+        // evita que um place (mesma longitude e latitude) seja adicionado
+        // TIP. : ver regra no model de Place
+        if !places.contains(place) {
+            // save
+            self.places.append(place)
+            self.savePlaces()
+            self.tableView.reloadData()
+        }
+    }
+}
+
+
+
+
+
+

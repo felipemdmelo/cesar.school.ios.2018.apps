@@ -15,7 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        // deixa todas as janelas filhas com o tint color baseado no ColorSet
+        window?.tintColor = UIColor(named: "main")
+        
+        
         return true
     }
 

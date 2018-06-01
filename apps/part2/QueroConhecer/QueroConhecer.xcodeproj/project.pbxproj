@@ -12,6 +12,8 @@
 		DC6B27F920BE1CDD0006D3F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC6B27F820BE1CDD0006D3F8 /* Assets.xcassets */; };
 		DC6B27FC20BE1CDD0006D3F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC6B27FA20BE1CDD0006D3F8 /* LaunchScreen.storyboard */; };
 		DC6B280420BF77390006D3F8 /* PlaceFinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6B280320BF77390006D3F8 /* PlaceFinderViewController.swift */; };
+		EDD0F94B20C0985B0032E3AC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD0F94A20C0985B0032E3AC /* MapViewController.swift */; };
+		EDD0F94D20C0DB590032E3AC /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD0F94C20C0DB590032E3AC /* Place.swift */; };
 		EDF5B18F20BECC670028E0E6 /* PlacesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF5B18E20BECC670028E0E6 /* PlacesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +25,8 @@
 		DC6B27FB20BE1CDD0006D3F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC6B27FD20BE1CDD0006D3F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC6B280320BF77390006D3F8 /* PlaceFinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceFinderViewController.swift; sourceTree = "<group>"; };
+		EDD0F94A20C0985B0032E3AC /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		EDD0F94C20C0DB590032E3AC /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		EDF5B18E20BECC670028E0E6 /* PlacesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +82,7 @@
 		EDF5B18C20BECB700028E0E6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EDD0F94C20C0DB590032E3AC /* Place.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -87,6 +92,7 @@
 			children = (
 				EDF5B18E20BECC670028E0E6 /* PlacesTableViewController.swift */,
 				DC6B280320BF77390006D3F8 /* PlaceFinderViewController.swift */,
+				EDD0F94A20C0985B0032E3AC /* MapViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -165,6 +171,8 @@
 				DC6B280420BF77390006D3F8 /* PlaceFinderViewController.swift in Sources */,
 				DC6B27F220BE1CDC0006D3F8 /* AppDelegate.swift in Sources */,
 				EDF5B18F20BECC670028E0E6 /* PlacesTableViewController.swift in Sources */,
+				EDD0F94B20C0985B0032E3AC /* MapViewController.swift in Sources */,
+				EDD0F94D20C0DB590032E3AC /* Place.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
