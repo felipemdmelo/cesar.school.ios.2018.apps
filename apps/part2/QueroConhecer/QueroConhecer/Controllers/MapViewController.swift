@@ -18,7 +18,12 @@ class MapViewController: UIViewController {
     @IBOutlet weak var lbName: UILabel!
     @IBOutlet weak var lbAddress: UILabel!
     
+    @IBOutlet weak var loading: UIActivityIndicatorView!
+    
     var places: [Place]!
+    
+    // para guardar os pontos de interesse (POI) encontrados no search
+    var poi: [MKAnnotation] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +31,9 @@ class MapViewController: UIViewController {
         // esconder os componentes
         searchBar.isHidden = true
         viInfo.isHidden = true
+        
+        // definindo programaticamente o Type do mapa
+        mapView.mapType = .mutedStandard
         
         // para permitir alterar a annotation mostrada na view do mapa
         mapView.delegate = self
@@ -69,6 +77,8 @@ class MapViewController: UIViewController {
     
     
     @IBAction func showSearchBar(_ sender: UIBarButtonItem) {
+        self.searchBar.resignFirstResponder()
+        self.searchBar.isHidden = !self.searchBar.isHidden
     }
    
 }
@@ -104,5 +114,62 @@ extension MapViewController: MKMapViewDelegate {
     }
 }
 
+extension MapViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.isHidden = true
+        searchBar.resignFirstResponder()
+        
+        // começa animação do loading
+        loading.startAnimating()
+        
+        // prepara uma busca em pontos de interesse do mapa
+        let request = MKLocalSearchRequest()
+        request.naturalLanguageQuery = searchBar.text
+        
+        // em qual regiao será realizado a pesquisa
+        request.region = mapView.region
+        
+        let search = MKLocalSearch(request: request)
+        search.start { (response, error) in
+            if error == nil {
+                guard let response = response else {
+                    DispatchQueue.main.async {
+                        self.loading.stopAnimating()
+                    }
+                    return
+                }
+                
+                DispatchQueue.main.async {
+                    // remove as ultimas buscas adicionadas no array de POI
+                    self.mapView.removeAnnotations(self.poi)
+                    self.poi.removeAll()
+                    
+                    // pega as respostas da busca e cria annotations
+                    for item in response.mapItems {
+                        let annotation = PlaceAnnotation(coordinate: item.placemark.coordinate, type: .poi)
+                        annotation.title = item.name
+                        annotation.subtitle = item.phoneNumber
+                        annotation.address = Place.getFormattedAddress(with: item.placemark)
+                        // atualizar a estrutura de POI
+                        self.poi.append(annotation)
+                    }
+                    // atualizar o mapa com as annotations encontradas e mostrar no mapa
+                    self.mapView.addAnnotations(self.poi)
+                    self.mapView.showAnnotations(self.poi, animated: true)
+                }
+                
+            } else {
+                print(error.debugDescription)
+            }
+            
+            DispatchQueue.main.async {
+                self.loading.stopAnimating()
+            }
+        }
+        
+    }
+    
+}
 
 

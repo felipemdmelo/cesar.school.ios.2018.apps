@@ -198,8 +198,11 @@
                                         </constraints>
                                         <color key="barTintColor" name="main"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="EAY-b9-pFa" id="FIx-HD-eLw"/>
+                                        </connections>
                                     </searchBar>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="laN-Bb-U1f">
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="hybrid" translatesAutoresizingMaskIntoConstraints="NO" id="laN-Bb-U1f">
                                         <rect key="frame" x="0.0" y="50" width="355" height="315"/>
                                     </mapView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pO0-ST-QcC">
@@ -238,6 +241,10 @@
                                     </view>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Mp9-2n-QWW">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" name="main"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -245,9 +252,11 @@
                             <constraint firstItem="PpG-9y-Agk" firstAttribute="leading" secondItem="tNB-9P-cgn" secondAttribute="leading" constant="10" id="3Zz-Lx-P3z"/>
                             <constraint firstItem="tNB-9P-cgn" firstAttribute="bottom" secondItem="PpG-9y-Agk" secondAttribute="bottom" constant="10" id="BiB-Vn-J8h"/>
                             <constraint firstItem="PpG-9y-Agk" firstAttribute="top" secondItem="tNB-9P-cgn" secondAttribute="top" constant="10" id="Ngo-Hn-wKj"/>
+                            <constraint firstItem="Mp9-2n-QWW" firstAttribute="centerY" secondItem="laN-Bb-U1f" secondAttribute="centerY" id="OfG-p8-HZi"/>
                             <constraint firstAttribute="bottom" secondItem="cqc-tZ-Lol" secondAttribute="bottom" id="Whj-Qc-IkG"/>
                             <constraint firstItem="cqc-tZ-Lol" firstAttribute="top" secondItem="hLk-TI-bBO" secondAttribute="top" id="dOH-Zp-EDZ"/>
                             <constraint firstItem="PpG-9y-Agk" firstAttribute="trailing" secondItem="tNB-9P-cgn" secondAttribute="trailing" constant="-10" id="goe-Wv-ziV"/>
+                            <constraint firstItem="Mp9-2n-QWW" firstAttribute="centerX" secondItem="laN-Bb-U1f" secondAttribute="centerX" id="mWv-fq-jej"/>
                             <constraint firstAttribute="trailing" secondItem="cqc-tZ-Lol" secondAttribute="trailing" id="zCo-qL-J5a"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tNB-9P-cgn"/>
@@ -262,6 +271,7 @@
                     <connections>
                         <outlet property="lbAddress" destination="kCR-3p-BSu" id="HNd-Rw-yUd"/>
                         <outlet property="lbName" destination="beC-9S-GwF" id="Wye-gI-rUQ"/>
+                        <outlet property="loading" destination="Mp9-2n-QWW" id="eQp-Yc-kyF"/>
                         <outlet property="mapView" destination="laN-Bb-U1f" id="KSb-Dj-iMl"/>
                         <outlet property="searchBar" destination="pN1-QD-RJF" id="vqI-Uh-PS3"/>
                         <outlet property="viInfo" destination="pO0-ST-QcC" id="BYl-Yd-LGx"/>
