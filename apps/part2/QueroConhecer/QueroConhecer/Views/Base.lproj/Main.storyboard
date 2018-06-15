@@ -223,6 +223,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nly-R2-3k9">
                                                 <rect key="frame" x="12" y="114" width="331" height="30"/>
                                                 <state key="normal" title="Traçar Rota"/>
+                                                <connections>
+                                                    <action selector="showRoute:" destination="EAY-b9-pFa" eventType="touchUpInside" id="mCf-Gj-uUU"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
