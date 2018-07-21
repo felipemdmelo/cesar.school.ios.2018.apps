@@ -39,6 +39,15 @@ class GamesTableViewController: UITableViewController {
         // usando extensions
         searchController.searchBar.delegate = self
         searchController.searchResultsUpdater = self
+        
+        /*
+         FIX BUG black screen
+         Source: https://stackoverflow.com/questions/38836862/tab-bar-view-goes-blank-when-switched-back-to-with-search-bar-active
+         */
+        self.definesPresentationContext = true
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.definesPresentationContext = true
 
         
         // carrega dados
