@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SideMenu
 
 class CarsTableViewController: UITableViewController {
 
@@ -24,8 +25,16 @@ class CarsTableViewController: UITableViewController {
         
         tableView.refreshControl = UIRefreshControl()
         tableView.refreshControl?.addTarget(self, action: #selector(loadCars), for: .valueChanged)
-//        tableView.refreshControl = refreshControl
         
+        
+        // Define the menus
+        SideMenuManager.default.menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as? UISideMenuNavigationController
+        
+        
+        // Enable gestures. The left and/or right menus must be set up above for these to work.
+        // Note that these continue to work on the Navigation Controller independent of the View Controller it displays!
+        SideMenuManager.default.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
+        SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
     }
 
     
@@ -121,6 +130,58 @@ class CarsTableViewController: UITableViewController {
     @objc fileprivate func loadCars() {
         
         
+        REST.loadCarsAlamofire(onComplete: { (cars) in
+            
+            self.cars = cars
+            
+            // precisa recarregar a tableview usando a main UI thread
+            DispatchQueue.main.async {
+                
+                self.tableView.refreshControl?.endRefreshing()
+                
+                if cars.count == 0 {
+                    // mostrar mensagem padrao
+                    self.label.text = "Sem dados"
+                    self.tableView.backgroundView = self.label
+                } else {
+                    self.label.text = ""
+                }
+                
+                
+                
+                self.tableView.reloadData()
+            }
+            
+        }) { (error) in
+            // algum erro ocorreu no request
+            
+            var response: String = ""
+            
+            switch error {
+                case .invalidJSON:
+                    response = "invalidJSON"
+                case .noData:
+                    response = "noData"
+                case .noResponse:
+                    response = "noResponse"
+                case .url:
+                    response = "JSON inválido"
+                case .taskError(let error):
+                    response = "\(error.localizedDescription)"
+                case .responseStatusCode(let code):
+                    if code != 200 {
+                        response = "Algum problema com o servidor. :( \nError:\(code)"
+                    }
+            }
+            
+            print(response)
+            
+            DispatchQueue.main.async {
+                self.tableView.refreshControl?.endRefreshing()
+            }
+        }
+
+/*
         REST.loadCars(onComplete: { (cars) in
             
             self.cars = cars
@@ -174,7 +235,7 @@ class CarsTableViewController: UITableViewController {
                 self.tableView.refreshControl?.endRefreshing()
             }
         }
-        
+*/
         
     }
     

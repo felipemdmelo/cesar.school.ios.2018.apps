@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 /**
  Indica os erros comuns para operações dos endpoints
@@ -44,6 +45,44 @@ class REST {
     }()
     
     private static let session = URLSession(configuration: configuration)
+    
+    
+    class func loadCarsAlamofire(onComplete: @escaping ([Car]) -> Void, onError: @escaping (CarError) -> Void) {
+        
+        guard let url = URL(string: basePath) else {
+            onError(.url)
+            return
+        }
+        
+        Alamofire.request(url, method: .get)
+            .validate()
+            .responseJSON { response in
+                
+                guard response.result.isSuccess else {
+                    onError(.noData)
+                    return
+                }
+                
+                // servidor respondeu com sucesso :)
+                // obter o valor de data
+                guard let data = response.data else {
+                    onError(.noData)
+                    return
+                }
+                
+                do {
+                    let cars = try JSONDecoder().decode([Car].self, from: data)
+                    onComplete(cars)
+                    
+                } catch {
+                    // algum erro ocorreu com os dados
+                    print(error.localizedDescription)
+                    onError(.invalidJSON)
+                }
+        }
+        
+    }
+    
     
     
     class func loadCars(onComplete: @escaping ([Car]) -> Void, onError: @escaping (CarError) -> Void) {
@@ -175,34 +214,45 @@ class REST {
             return
         }
         
+        
         var request = URLRequest(url: url)
         var httpMethod: String = ""
         
         switch operation {
-            case .delete:
-                httpMethod = "DELETE"
-            case .save:
-                httpMethod = "POST"
-            case .update:
-                httpMethod = "PUT"
+        case .delete:
+            httpMethod = "DELETE"
+        case .save:
+            httpMethod = "POST"
+        case .update:
+            httpMethod = "PUT"
         }
         request.httpMethod = httpMethod
         
-        let dataTask = session.dataTask(with: request) { (data, response, error) in
-            
+        // transformar objeto para um JSON, processo contrario do decoder -> Encoder
+        guard let json = try? JSONEncoder().encode(car) else {
+            onComplete(false)
+            return
+        }
+        request.httpBody = json
+        
+        let dataTask = session.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
             if error == nil {
                 // verificar e desembrulhar em uma unica vez
                 guard let response = response as? HTTPURLResponse, response.statusCode == 200, let _ = data else {
                     onComplete(false)
                     return
                 }
-                // sucesso
+                
+                // ok
                 onComplete(true)
+                
             } else {
                 onComplete(false)
             }
         }
+        
         dataTask.resume()
+    
     }
     
 } // fim da classe REST

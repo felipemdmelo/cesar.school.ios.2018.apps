@@ -59,6 +59,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Carangas" id="qEi-1J-Fj0">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="997-Xq-8dw">
+                            <connections>
+                                <segue destination="3Kr-Y4-lry" kind="presentation" id="icx-g1-r2U"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="tSI-m7-DTr">
                             <connections>
                                 <segue destination="grR-Sl-Z0I" kind="show" identifier="addSegue" id="Unn-qu-cRI"/>
@@ -85,6 +90,86 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wgz-lH-c5N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-556" y="175"/>
+        </scene>
+        <!--Menu de opções-->
+        <scene sceneID="Wrs-tv-oPY">
+            <objects>
+                <tableViewController id="Qfx-Jl-RlW" customClass="MenuTableViewController" customModule="Carangas" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fpI-iD-mpR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <sections>
+                            <tableViewSection id="3La-Zf-s81">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="Zek-E1-3M2" style="IBUITableViewCellStyleDefault" id="PNv-yY-Fyq">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PNv-yY-Fyq" id="eHx-B1-GzW">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Sobre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zek-E1-3M2">
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="GXu-28-ckX" kind="show" id="Abq-V0-W04"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="Qfx-Jl-RlW" id="Lhb-QC-fnd"/>
+                            <outlet property="delegate" destination="Qfx-Jl-RlW" id="WZl-KT-uOQ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Menu de opções" largeTitleDisplayMode="never" id="JeH-Fy-zpM"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OCe-wt-iYQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="265" y="-517"/>
+        </scene>
+        <!--Sobre-->
+        <scene sceneID="hrM-nq-QcC">
+            <objects>
+                <viewController id="GXu-28-ckX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5jJ-Rg-a6I">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.68235294120000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="M6M-dh-IYg"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Sobre" largeTitleDisplayMode="always" id="xsL-Ce-20K"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2dc-vZ-S8m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1071" y="-1056"/>
+        </scene>
+        <!--Side Menu Navigation Controller-->
+        <scene sceneID="hk8-BD-ssK">
+            <objects>
+                <navigationController storyboardIdentifier="LeftMenuNavigationController" id="3Kr-Y4-lry" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="GK8-TC-epW">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="Qfx-Jl-RlW" kind="relationship" relationship="rootViewController" id="Ag8-hg-i5T"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fNK-Oh-HXu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-685" y="-517"/>
         </scene>
         <!--Cadastro-->
         <scene sceneID="qdb-lC-fe7">
@@ -280,11 +365,8 @@
         <namedColor name="main">
             <color red="0.20000000298023224" green="0.56499999761581421" blue="0.57599997520446777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="main">
-            <color red="0.20000000298023224" green="0.56499999761581421" blue="0.57599997520446777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kKk-qI-2Ya"/>
+        <segue reference="Unn-qu-cRI"/>
     </inferredMetricsTieBreakers>
 </document>
