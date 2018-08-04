@@ -223,15 +223,33 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HLy-ij-7JS">
+                                <rect key="frame" x="0.0" y="237" width="375" height="430"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="a5w-V8-hhL">
+                                <rect key="frame" x="169" y="434" width="37" height="37"/>
+                                <color key="color" name="main"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="HLy-ij-7JS" firstAttribute="top" secondItem="M2w-Q0-H2V" secondAttribute="bottom" constant="30" id="0kQ-nm-azT"/>
+                            <constraint firstItem="HLy-ij-7JS" firstAttribute="trailing" secondItem="Hc8-xg-B67" secondAttribute="trailing" id="6Hr-8p-Se1"/>
                             <constraint firstItem="Hc8-xg-B67" firstAttribute="trailing" secondItem="h0W-xz-8b0" secondAttribute="trailing" constant="16" id="9Xd-oH-OSQ"/>
                             <constraint firstItem="M2w-Q0-H2V" firstAttribute="leading" secondItem="Hc8-xg-B67" secondAttribute="leading" constant="24" id="CRT-Gh-Xd2"/>
                             <constraint firstItem="h0W-xz-8b0" firstAttribute="leading" secondItem="Hc8-xg-B67" secondAttribute="leading" constant="24" id="Iiw-0H-U6i"/>
+                            <constraint firstItem="a5w-V8-hhL" firstAttribute="centerY" secondItem="HLy-ij-7JS" secondAttribute="centerY" id="KJC-YC-XJ7"/>
                             <constraint firstItem="Hc8-xg-B67" firstAttribute="trailing" secondItem="n0h-oW-Exb" secondAttribute="trailing" constant="16" id="NzJ-0E-gpT"/>
+                            <constraint firstItem="a5w-V8-hhL" firstAttribute="centerX" secondItem="HLy-ij-7JS" secondAttribute="centerX" id="Ulo-Mf-05u"/>
                             <constraint firstItem="M2w-Q0-H2V" firstAttribute="top" secondItem="n0h-oW-Exb" secondAttribute="bottom" constant="4" id="Ym4-LP-k9K"/>
+                            <constraint firstItem="HLy-ij-7JS" firstAttribute="leading" secondItem="Hc8-xg-B67" secondAttribute="leading" id="bg7-PK-v7z"/>
                             <constraint firstItem="Hc8-xg-B67" firstAttribute="trailing" secondItem="M2w-Q0-H2V" secondAttribute="trailing" constant="16" id="bzE-bn-GFn"/>
+                            <constraint firstItem="HLy-ij-7JS" firstAttribute="bottom" secondItem="Hc8-xg-B67" secondAttribute="bottom" id="hMm-v1-u2i"/>
                             <constraint firstItem="n0h-oW-Exb" firstAttribute="top" secondItem="h0W-xz-8b0" secondAttribute="bottom" constant="4" id="m9D-Zw-cKa"/>
                             <constraint firstItem="h0W-xz-8b0" firstAttribute="top" secondItem="Hc8-xg-B67" secondAttribute="top" constant="20" id="usU-Xg-Eur"/>
                             <constraint firstItem="n0h-oW-Exb" firstAttribute="leading" secondItem="Hc8-xg-B67" secondAttribute="leading" constant="24" id="xSR-kp-gCZ"/>
@@ -246,22 +264,27 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="aivLoading" destination="a5w-V8-hhL" id="0mg-Qp-Uq1"/>
                         <outlet property="lbBrand" destination="h0W-xz-8b0" id="kxf-UO-tZ5"/>
                         <outlet property="lbGasType" destination="n0h-oW-Exb" id="Vf0-jU-vUd"/>
                         <outlet property="lbPrice" destination="M2w-Q0-H2V" id="8V9-yK-eSK"/>
+                        <outlet property="webView" destination="HLy-ij-7JS" id="hdw-1g-iY3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KUJ-h6-dXA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1294" y="687"/>
+            <point key="canvasLocation" x="1293.5999999999999" y="686.80659670164926"/>
         </scene>
     </scenes>
     <resources>
         <namedColor name="main">
             <color red="0.20000000298023224" green="0.56499999761581421" blue="0.57599997520446777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="main">
+            <color red="0.20000000298023224" green="0.56499999761581421" blue="0.57599997520446777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Unn-qu-cRI"/>
+        <segue reference="kKk-qI-2Ya"/>
     </inferredMetricsTieBreakers>
 </document>
