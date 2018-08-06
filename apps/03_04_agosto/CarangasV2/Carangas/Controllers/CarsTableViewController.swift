@@ -130,7 +130,7 @@ class CarsTableViewController: UITableViewController {
     @objc fileprivate func loadCars() {
         
         
-        REST.loadCarsAlamofire(onComplete: { (cars) in
+        RESTAlamofire.loadCarsAlamofire(onComplete: { (cars) in
             
             self.cars = cars
             

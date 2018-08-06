@@ -47,43 +47,6 @@ class REST {
     private static let session = URLSession(configuration: configuration)
     
     
-    class func loadCarsAlamofire(onComplete: @escaping ([Car]) -> Void, onError: @escaping (CarError) -> Void) {
-        
-        guard let url = URL(string: basePath) else {
-            onError(.url)
-            return
-        }
-        
-        Alamofire.request(url, method: .get)
-            .validate()
-            .responseJSON { response in
-                
-                guard response.result.isSuccess else {
-                    onError(.noData)
-                    return
-                }
-                
-                // servidor respondeu com sucesso :)
-                // obter o valor de data
-                guard let data = response.data else {
-                    onError(.noData)
-                    return
-                }
-                
-                do {
-                    let cars = try JSONDecoder().decode([Car].self, from: data)
-                    onComplete(cars)
-                    
-                } catch {
-                    // algum erro ocorreu com os dados
-                    print(error.localizedDescription)
-                    onError(.invalidJSON)
-                }
-        }
-        
-    }
-    
-    
     
     class func loadCars(onComplete: @escaping ([Car]) -> Void, onError: @escaping (CarError) -> Void) {
         
