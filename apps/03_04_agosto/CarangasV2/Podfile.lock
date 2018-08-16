@@ -1,0 +1,20 @@
+PODS:
+  - Alamofire (4.7.2)
+  - SideMenu (3.1.5)
+
+DEPENDENCIES:
+  - Alamofire
+  - SideMenu
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - SideMenu
+
+SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  SideMenu: 47dbf9e4d878062d8994aed43f6e4bf6c1fea30b
+
+PODFILE CHECKSUM: 28b7723fb7f0073ec85969ae803f4e83bcf7cc79
+
+COCOAPODS: 1.5.3
