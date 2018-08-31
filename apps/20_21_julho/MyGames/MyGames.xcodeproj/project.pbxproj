@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		576A2339213A058A00A41A42 /* MyGamesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576A2338213A058A00A41A42 /* MyGamesUITests.swift */; };
 		ED1A61E32101FC830041ACA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A61E22101FC830041ACA5 /* AppDelegate.swift */; };
 		ED1A61E82101FC830041ACA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED1A61E62101FC830041ACA5 /* Main.storyboard */; };
 		ED1A61EB2101FC830041ACA5 /* MyGames.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED1A61E92101FC830041ACA5 /* MyGames.xcdatamodeld */; };
@@ -21,7 +22,20 @@
 		ED1A620A210258110041ACA5 /* ConsolesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A6209210258110041ACA5 /* ConsolesManager.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		576A233B213A058A00A41A42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED1A61D72101FC820041ACA5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED1A61DE2101FC820041ACA5;
+			remoteInfo = MyGames;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		576A2336213A058A00A41A42 /* MyGamesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyGamesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		576A2338213A058A00A41A42 /* MyGamesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGamesUITests.swift; sourceTree = "<group>"; };
+		576A233A213A058A00A41A42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED1A61DF2101FC820041ACA5 /* MyGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED1A61E22101FC830041ACA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED1A61E72101FC830041ACA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -39,6 +53,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		576A2333213A058A00A41A42 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ED1A61DC2101FC820041ACA5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -49,10 +70,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		576A2337213A058A00A41A42 /* MyGamesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				576A2338213A058A00A41A42 /* MyGamesUITests.swift */,
+				576A233A213A058A00A41A42 /* Info.plist */,
+			);
+			path = MyGamesUITests;
+			sourceTree = "<group>";
+		};
 		ED1A61D62101FC820041ACA5 = {
 			isa = PBXGroup;
 			children = (
 				ED1A61E12101FC820041ACA5 /* MyGames */,
+				576A2337213A058A00A41A42 /* MyGamesUITests */,
 				ED1A61E02101FC820041ACA5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				ED1A61DF2101FC820041ACA5 /* MyGames.app */,
+				576A2336213A058A00A41A42 /* MyGamesUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,6 +152,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		576A2335213A058A00A41A42 /* MyGamesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 576A233F213A058A00A41A42 /* Build configuration list for PBXNativeTarget "MyGamesUITests" */;
+			buildPhases = (
+				576A2332213A058A00A41A42 /* Sources */,
+				576A2333213A058A00A41A42 /* Frameworks */,
+				576A2334213A058A00A41A42 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				576A233C213A058A00A41A42 /* PBXTargetDependency */,
+			);
+			name = MyGamesUITests;
+			productName = MyGamesUITests;
+			productReference = 576A2336213A058A00A41A42 /* MyGamesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		ED1A61DE2101FC820041ACA5 /* MyGames */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED1A61F42101FC840041ACA5 /* Build configuration list for PBXNativeTarget "MyGames" */;
@@ -147,6 +197,10 @@
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "CESAR School";
 				TargetAttributes = {
+					576A2335213A058A00A41A42 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = ED1A61DE2101FC820041ACA5;
+					};
 					ED1A61DE2101FC820041ACA5 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
@@ -166,11 +220,19 @@
 			projectRoot = "";
 			targets = (
 				ED1A61DE2101FC820041ACA5 /* MyGames */,
+				576A2335213A058A00A41A42 /* MyGamesUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		576A2334213A058A00A41A42 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ED1A61DD2101FC820041ACA5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -184,6 +246,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		576A2332213A058A00A41A42 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				576A2339213A058A00A41A42 /* MyGamesUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ED1A61DB2101FC820041ACA5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -201,6 +271,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		576A233C213A058A00A41A42 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED1A61DE2101FC820041ACA5 /* MyGames */;
+			targetProxy = 576A233B213A058A00A41A42 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		ED1A61E62101FC830041ACA5 /* Main.storyboard */ = {
@@ -222,6 +300,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		576A233D213A058A00A41A42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MyGamesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.liv.tigerrobocop.MyGamesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MyGames;
+			};
+			name = Debug;
+		};
+		576A233E213A058A00A41A42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MyGamesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.liv.tigerrobocop.MyGamesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MyGames;
+			};
+			name = Release;
+		};
 		ED1A61F22101FC840041ACA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -373,6 +487,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		576A233F213A058A00A41A42 /* Build configuration list for PBXNativeTarget "MyGamesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				576A233D213A058A00A41A42 /* Debug */,
+				576A233E213A058A00A41A42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		ED1A61DA2101FC820041ACA5 /* Build configuration list for PBXProject "MyGames" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
