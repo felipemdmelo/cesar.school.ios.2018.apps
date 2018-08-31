@@ -12,7 +12,6 @@ import CoreData
 extension UIViewController {
     
     // propriedade computada que através de uma Category permite agora que qualquer
-    // objeto UIViewController conheça essa propriedade context.
     
     var context: NSManagedObjectContext {
         
