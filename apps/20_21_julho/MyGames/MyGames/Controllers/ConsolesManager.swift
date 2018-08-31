@@ -10,7 +10,7 @@ import CoreData
 
 class ConsolesManager {
     
-    let name = "Lívia Souza"
+    let name  = "Livia SOuza"
     
     static let shared = ConsolesManager()
     var consoles: [Console] = []
