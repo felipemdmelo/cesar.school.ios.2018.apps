@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04BD467B213A058D00D5E740 /* MyGamesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD467A213A058D00D5E740 /* MyGamesTests.swift */; };
 		ED1A61E32101FC830041ACA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A61E22101FC830041ACA5 /* AppDelegate.swift */; };
 		ED1A61E82101FC830041ACA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED1A61E62101FC830041ACA5 /* Main.storyboard */; };
 		ED1A61EB2101FC830041ACA5 /* MyGames.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED1A61E92101FC830041ACA5 /* MyGames.xcdatamodeld */; };
@@ -21,7 +22,20 @@
 		ED1A620A210258110041ACA5 /* ConsolesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A6209210258110041ACA5 /* ConsolesManager.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		04BD467D213A058D00D5E740 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED1A61D72101FC820041ACA5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED1A61DE2101FC820041ACA5;
+			remoteInfo = MyGames;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		04BD4678213A058D00D5E740 /* MyGamesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyGamesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04BD467A213A058D00D5E740 /* MyGamesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGamesTests.swift; sourceTree = "<group>"; };
+		04BD467C213A058D00D5E740 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED1A61DF2101FC820041ACA5 /* MyGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED1A61E22101FC830041ACA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED1A61E72101FC830041ACA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -39,6 +53,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		04BD4675213A058D00D5E740 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ED1A61DC2101FC820041ACA5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -49,10 +70,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04BD4679213A058D00D5E740 /* MyGamesTests */ = {
+			isa = PBXGroup;
+			children = (
+				04BD467A213A058D00D5E740 /* MyGamesTests.swift */,
+				04BD467C213A058D00D5E740 /* Info.plist */,
+			);
+			path = MyGamesTests;
+			sourceTree = "<group>";
+		};
 		ED1A61D62101FC820041ACA5 = {
 			isa = PBXGroup;
 			children = (
 				ED1A61E12101FC820041ACA5 /* MyGames */,
+				04BD4679213A058D00D5E740 /* MyGamesTests */,
 				ED1A61E02101FC820041ACA5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				ED1A61DF2101FC820041ACA5 /* MyGames.app */,
+				04BD4678213A058D00D5E740 /* MyGamesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,6 +152,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		04BD4677213A058D00D5E740 /* MyGamesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04BD4681213A058D00D5E740 /* Build configuration list for PBXNativeTarget "MyGamesTests" */;
+			buildPhases = (
+				04BD4674213A058D00D5E740 /* Sources */,
+				04BD4675213A058D00D5E740 /* Frameworks */,
+				04BD4676213A058D00D5E740 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04BD467E213A058D00D5E740 /* PBXTargetDependency */,
+			);
+			name = MyGamesTests;
+			productName = MyGamesTests;
+			productReference = 04BD4678213A058D00D5E740 /* MyGamesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		ED1A61DE2101FC820041ACA5 /* MyGames */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED1A61F42101FC840041ACA5 /* Build configuration list for PBXNativeTarget "MyGames" */;
@@ -147,6 +197,10 @@
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "CESAR School";
 				TargetAttributes = {
+					04BD4677213A058D00D5E740 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = ED1A61DE2101FC820041ACA5;
+					};
 					ED1A61DE2101FC820041ACA5 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
@@ -166,11 +220,19 @@
 			projectRoot = "";
 			targets = (
 				ED1A61DE2101FC820041ACA5 /* MyGames */,
+				04BD4677213A058D00D5E740 /* MyGamesTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		04BD4676213A058D00D5E740 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ED1A61DD2101FC820041ACA5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -184,6 +246,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		04BD4674213A058D00D5E740 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04BD467B213A058D00D5E740 /* MyGamesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ED1A61DB2101FC820041ACA5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -201,6 +271,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		04BD467E213A058D00D5E740 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED1A61DE2101FC820041ACA5 /* MyGames */;
+			targetProxy = 04BD467D213A058D00D5E740 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		ED1A61E62101FC830041ACA5 /* Main.storyboard */ = {
@@ -222,6 +300,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		04BD467F213A058D00D5E740 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UJSU72ZSSJ;
+				INFOPLIST_FILE = MyGamesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.gabe.MyGamesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyGames.app/MyGames";
+			};
+			name = Debug;
+		};
+		04BD4680213A058D00D5E740 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UJSU72ZSSJ;
+				INFOPLIST_FILE = MyGamesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.gabe.MyGamesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyGames.app/MyGames";
+			};
+			name = Release;
+		};
 		ED1A61F22101FC840041ACA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -373,6 +491,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		04BD4681213A058D00D5E740 /* Build configuration list for PBXNativeTarget "MyGamesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04BD467F213A058D00D5E740 /* Debug */,
+				04BD4680213A058D00D5E740 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		ED1A61DA2101FC820041ACA5 /* Build configuration list for PBXProject "MyGames" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
