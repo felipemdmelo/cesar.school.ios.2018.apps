@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04BD467B213A058D00D5E740 /* MyGamesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD467A213A058D00D5E740 /* MyGamesTests.swift */; };
+		576A2347213A0CD200A41A42 /* MyGamesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576A2346213A0CD200A41A42 /* MyGamesUITests.swift */; };
 		ED1A61E32101FC830041ACA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A61E22101FC830041ACA5 /* AppDelegate.swift */; };
 		ED1A61E82101FC830041ACA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED1A61E62101FC830041ACA5 /* Main.storyboard */; };
 		ED1A61EB2101FC830041ACA5 /* MyGames.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED1A61E92101FC830041ACA5 /* MyGames.xcdatamodeld */; };
@@ -30,12 +31,22 @@
 			remoteGlobalIDString = ED1A61DE2101FC820041ACA5;
 			remoteInfo = MyGames;
 		};
+		576A2349213A0CD200A41A42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED1A61D72101FC820041ACA5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED1A61DE2101FC820041ACA5;
+			remoteInfo = MyGames;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		04BD4678213A058D00D5E740 /* MyGamesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyGamesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04BD467A213A058D00D5E740 /* MyGamesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGamesTests.swift; sourceTree = "<group>"; };
 		04BD467C213A058D00D5E740 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		576A2344213A0CD200A41A42 /* MyGamesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyGamesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		576A2346213A0CD200A41A42 /* MyGamesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGamesUITests.swift; sourceTree = "<group>"; };
+		576A2348213A0CD200A41A42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED1A61DF2101FC820041ACA5 /* MyGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED1A61E22101FC830041ACA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED1A61E72101FC830041ACA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -54,6 +65,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		04BD4675213A058D00D5E740 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		576A2341213A0CD200A41A42 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -79,11 +97,21 @@
 			path = MyGamesTests;
 			sourceTree = "<group>";
 		};
+		576A2345213A0CD200A41A42 /* MyGamesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				576A2346213A0CD200A41A42 /* MyGamesUITests.swift */,
+				576A2348213A0CD200A41A42 /* Info.plist */,
+			);
+			path = MyGamesUITests;
+			sourceTree = "<group>";
+		};
 		ED1A61D62101FC820041ACA5 = {
 			isa = PBXGroup;
 			children = (
 				ED1A61E12101FC820041ACA5 /* MyGames */,
 				04BD4679213A058D00D5E740 /* MyGamesTests */,
+				576A2345213A0CD200A41A42 /* MyGamesUITests */,
 				ED1A61E02101FC820041ACA5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -93,6 +121,7 @@
 			children = (
 				ED1A61DF2101FC820041ACA5 /* MyGames.app */,
 				04BD4678213A058D00D5E740 /* MyGamesTests.xctest */,
+				576A2344213A0CD200A41A42 /* MyGamesUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -170,6 +199,24 @@
 			productReference = 04BD4678213A058D00D5E740 /* MyGamesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		576A2343213A0CD200A41A42 /* MyGamesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 576A234D213A0CD200A41A42 /* Build configuration list for PBXNativeTarget "MyGamesUITests" */;
+			buildPhases = (
+				576A2340213A0CD200A41A42 /* Sources */,
+				576A2341213A0CD200A41A42 /* Frameworks */,
+				576A2342213A0CD200A41A42 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				576A234A213A0CD200A41A42 /* PBXTargetDependency */,
+			);
+			name = MyGamesUITests;
+			productName = MyGamesUITests;
+			productReference = 576A2344213A0CD200A41A42 /* MyGamesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		ED1A61DE2101FC820041ACA5 /* MyGames */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED1A61F42101FC840041ACA5 /* Build configuration list for PBXNativeTarget "MyGames" */;
@@ -201,6 +248,10 @@
 						CreatedOnToolsVersion = 9.4.1;
 						TestTargetID = ED1A61DE2101FC820041ACA5;
 					};
+					576A2343213A0CD200A41A42 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = ED1A61DE2101FC820041ACA5;
+					};
 					ED1A61DE2101FC820041ACA5 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
@@ -221,12 +272,20 @@
 			targets = (
 				ED1A61DE2101FC820041ACA5 /* MyGames */,
 				04BD4677213A058D00D5E740 /* MyGamesTests */,
+				576A2343213A0CD200A41A42 /* MyGamesUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		04BD4676213A058D00D5E740 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		576A2342213A0CD200A41A42 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -254,6 +313,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		576A2340213A0CD200A41A42 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				576A2347213A0CD200A41A42 /* MyGamesUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ED1A61DB2101FC820041ACA5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -277,6 +344,11 @@
 			isa = PBXTargetDependency;
 			target = ED1A61DE2101FC820041ACA5 /* MyGames */;
 			targetProxy = 04BD467D213A058D00D5E740 /* PBXContainerItemProxy */;
+		};
+		576A234A213A0CD200A41A42 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED1A61DE2101FC820041ACA5 /* MyGames */;
+			targetProxy = 576A2349213A0CD200A41A42 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -337,6 +409,42 @@
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyGames.app/MyGames";
+			};
+			name = Release;
+		};
+		576A234B213A0CD200A41A42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MyGamesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.liv.tigerrobocop.MyGamesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MyGames;
+			};
+			name = Debug;
+		};
+		576A234C213A0CD200A41A42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MyGamesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.liv.tigerrobocop.MyGamesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MyGames;
 			};
 			name = Release;
 		};
@@ -496,6 +604,15 @@
 			buildConfigurations = (
 				04BD467F213A058D00D5E740 /* Debug */,
 				04BD4680213A058D00D5E740 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		576A234D213A0CD200A41A42 /* Build configuration list for PBXNativeTarget "MyGamesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				576A234B213A0CD200A41A42 /* Debug */,
+				576A234C213A0CD200A41A42 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
