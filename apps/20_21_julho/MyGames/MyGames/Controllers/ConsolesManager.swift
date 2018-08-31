@@ -20,6 +20,8 @@ class ConsolesManager {
         let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         
+        // TESTE AQUI
+        
         do {
             consoles = try context.fetch(fetchRequest)
         } catch  {
